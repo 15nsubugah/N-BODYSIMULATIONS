@@ -1,0 +1,138 @@
+<head>
+  <!-- Stylesheets to the loading and menu screen as well as fonts used -->
+ <link rel="stylesheet" type="text/css" href="Menustyle.css"/> 
+ <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<style>
+  /* Classes for the fonts used */
+  h1,
+  a,
+  body,
+  title,
+  p{
+    font-family: 'Space Grotesk', sans-serif;
+  }
+</style>
+
+<title>Special cases for the n-body problem</title>
+<body>
+
+  <!-- Preloader tag to be called before the actual websire to estable the loading screen -->
+<div id="preloader"></div>
+
+  <!-- This 'Start' div tag allows user to click the main title to go back to the top of page -->
+  <div id="start"></div>
+  <nav>
+    <h1 style="color:white"><a href="#start">Special cases for the n-body problem</a></h1>
+    <a href="#bottom">Want to Learn more?</a>
+  </nav>
+  <!-- The top part of the page and the first things that you will see when you reach the page -->
+  <header>
+    <div class="bg">
+        <div class="content">
+          <!-- Two-Body Problem column -->
+          <div class="column">
+              <div class="upper">
+                <img src="TBP Photo.png">
+              </div>
+              <div class="middle">
+                <!-- The hidden link tag allows for the user to click on the simulation they like -->
+                <h1><a href="Iteration 1.html">TWO-BODY PROBLEM</a></h1>
+              </div>
+              <div class="lower">
+                <p>
+                   An isolated system of two massive objects which interact through a central potential.
+                </p>
+              </div>
+          </div>
+          
+          <!-- Three-body Problem column -->
+          <div class="column">
+            <div class="upper">
+              <img src="TBP Photo (2).png">
+            </div>
+            <div class="middle">
+              <h1><a href="Iteration 2.html">THREE-BODY PROBLEM</a></h1>
+            </div>
+            <div class="lower">
+              <p>
+                The motion of three large objects under their mutual gravitational interactions.
+              </p>
+          </div>
+          
+        </div>
+    </div>
+  </header>
+
+<!-- The remaining lines of code is for the bottom half of the page -->
+
+  <!-- The 'Bottom' tag allows the user to quickly take themselves to the bottom of the page-->
+  <div id="bottom"></div>
+
+
+  <footer>
+    <div class="bgf">
+      <div class="contentf">
+        <div class="upper">
+          <div class="title">
+            <h1 style="color: white">FURTHER READING</h1>
+          </div>
+        </div>
+        <div class="lower">
+          <div class="paragraphf">
+            <!--- Further reading page -->
+            <p style="font-size: large;">If you are seeking additional information about special cases for the n-body problem, 
+              please use these articles as a starting point:</p>
+            <!--- The different links on the page -->
+              <ul>
+                <li>
+                  <p>Bagla, J. S. (2005).<a href="https://arxiv.org/abs/astro-ph/0411043">"Cosmological N-body simulation: Techniques, 
+                    scope and status"</a> . Current Science. 88: 1088–1100. arXiv:astro-ph/0411043</p>
+                </li>
+                <li>
+                  <p>Atsu-Swanzy, John, <a href="https://rdw.rowan.edu/etd/2025?utm_source=rdw.rowan.edu%2Fetd%2F2025&u
+                    tm_medium=PDF&utm_campaign=PDFCoverPages">"A study of the n-body problem in celestial mechanics for college students"
+                  </a> (1997). Theses and Dissertations. 2025. </p>
+                </li>
+                <li>
+                  <p><a href="https://doi.org/10.1063/1.533319">"The Quantum N-body Problem"</a>, Journal of Mathematical Physics 41, 
+                    3448 (2000)</p>
+                </li>
+                <li>
+                  <p><a href="https://doi.org/10.1063/1.4823060">"Adaptive Stepsize Runge-Kutta Integration"</a>, Computers in Physics 6, 
+                    188 (1992)</p>
+                </li>
+                <li>
+                  <p><a href="https://aip.scitation.org/doi/10.1063/1.4822978">"Cosmological N-Body SimulationsModern Simulations 
+                    Use Millions of Particles to Follow Thousands of Galaxies in a Large Volume of Space"</a>, Computers in Physics 5, 
+                    164 (1991)</p>
+                </li>
+                <li>
+                  <p><a href="https://aip.scitation.org/doi/10.1063/1.4773727">"The fast multipole method for N-body problems"</a>
+                    , AIP Conference Proceedings 1507, 387 (2012)</p>
+                </li>
+                <li>
+                  <p><a href="https://aip.scitation.org/doi/10.1063/1.1664820">"Solution of a Three-Body Problem in One Dimension"</a>
+                    , Journal of Mathematical Physics 10, 2191 (1969)</p>
+                </li>
+                <li>
+                  <p><a href="https://aip.scitation.org/doi/10.1119/1.12144">"Euler’s three-body problem"</a>
+                    , American Journal of Physics 48, 297 (1980)</p>
+                </li>
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	  <script>
+		$(window).on("load",function(){
+     	 	$("#preloader").fadeOut("slower");
+		});
+	</script>
+
+</body>
