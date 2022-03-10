@@ -1,0 +1,115 @@
+body{
+  background: #333;
+  margin: 0;
+}
+
+
+nav{
+  background: linear-gradient(rgba(255,255,255,0.1),rgba(255,255,255,0.1));
+  height: 10vh;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.5), 0 1px 2px rgba(0,0,0,0.7);
+}
+
+nav a{
+  text-decoration: none;
+  color: #fff;
+  margin-left: 5px;
+  font-size: 1.1em;
+}
+
+header{
+  width: 100%;
+  height: 100vh;
+}
+
+
+/*background*/
+.bg{
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)),
+  url("https://cdn.dribbble.com/users/43762/screenshots/1438974/media/2a87a13fdadaffa725137d051409f13a.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  
+.content{
+  width: 90%;
+  height: 70%;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Both columns and their parts*/
+.column{
+  margin: 10px;
+  width: 45%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  overflow: hidden;
+  opacity: 0.8;
+}
+
+.column:hover{
+
+}
+
+.column .upper{
+  width: 100%;
+  height: 60%;
+  background: #2c3e50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.column .upper img{
+  width: 100%;
+  height: 100%;
+}
+
+.column .middle{
+  width: 100%;
+  height: 10%;
+  background: #95afc0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.column .lower{
+  width: 100%;
+  height: 30%;
+  background: #dfe6e9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.column .lower p{
+  width: 80%;
+  height: auto;
+  text-align: center;
+}
+
+/*FOOTER*/
+
+footer{
+  background: #fff;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}

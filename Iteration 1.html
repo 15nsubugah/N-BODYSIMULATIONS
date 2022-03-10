@@ -5,7 +5,7 @@
   h1 {color: white;
       font-family: orbitron, sans-serif, bold
   }
-  h2 {color: 6white;
+  h2 {color: white;
       font-family: orbitron, sans-serif; 
       font-variant: small-caps
   }
@@ -17,8 +17,10 @@
   }
 </style>
 </head>
+	<h1>Two-Body Problem</h1> 
 
-<title>Two-Body Problem</title>
+  <h2> The motion of two massive objects which are abstractly viewed as point particles</h2>
+
   <style>
   
   /*
@@ -27,17 +29,17 @@
   */
 
   body {
-  background-image: url("the-universe-wallpaper-1920x1080_48.jpg");
+  background-image: url('https://wallpaperaccess.com/full/2401680.jpg');
     background-size: cover;
     background-attachment: fixed;
 }
   
   .TwoBodySimulation-hasTopMarginNormal {
-    margin-top: -10px;
+    margin-top: 15px;
   }
   
   .TwoBodySimulation-hasNegativeBottomMarginNormal {
-    margin-bottom: -5px;
+    margin-bottom: -10px;
   }
   
   /*
@@ -55,24 +57,23 @@
   /* the Simulation's boundaries */
   .TwoBodySimulation-container {
     position: relative;
-    height: 350px;
+    height: 400px;
     background-position: center bottom;
     background-repeat: repeat;
-    background-size: 400px 250px;
-    margin-top: -30px;
+    background-size: 300px 250px;
   }
   /* makes sure the simulation runs at the centre of the page */
   .TwoBodySimulation-isTextCentered { text-align: center; }
   .TwoBodySimulation-isHiddenBlock { display: none; }
   
-  /* Centre of mass for the binary system (visual not mathematical) */
+  /* Centre of mass for the binary system (visual not mathematicall) */
   .TwoBodySimulation-centerOfMass {
     position: absolute;
     width: 11px;
-    top: 0px;
+    top: 50%;
     left: 50%;
     margin-left: -5px;
-    margin-top: 200px;
+    margin-top: -5px;
     z-index: 998;
   }
   
@@ -91,7 +92,7 @@
   /*Sun's orbit. */
   .TwoBodySimulation-sun {
     position: absolute;
-    width: 80px;
+    width: 60px;
     top: -1000px;
     -webkit-animation:spin .5s linear infinite;
     -moz-animation:spin .5s linear infinite;
@@ -128,9 +129,8 @@
     height: 100%;
     width: 100%;
     z-index: 1001;
-    left: 0px;
-    top: 50px;
-    bottom: -10px;
+    left: 0;
+    top: 0;
   }
   
   .TwoBodySimulation-hudContainerChild {
@@ -150,8 +150,8 @@
   .TwoBodySimulation-reload {
     position: absolute;
     display: block;
-    bottom: 0px;
-    right: 0px;
+    bottom: 10px;
+    right: 15px;
     width: 40px;
     height: 40px;
     outline: none;
@@ -162,6 +162,13 @@
   .TwoBodySimulation-reloadIcon {
     width: 100%;
     border : 0;
+  }
+  
+  /*The slider for both the mass and eccentricity variables. */
+  .TwoBodySimulation-massSlider,
+  .TwoBodySimulation-eccentricitySlider {
+    max-width: 400px;
+    margin: 0 auto;
   }
   
   /*
@@ -191,22 +198,9 @@
     left: 0;
     width: 30px;
     height: 40px;
-    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
-  border: 0px solid #000000;
-  border-radius: 7px;
-  background: #2BD4D0;
-  cursor: pointer;
-  -webkit-appearance: none;
-  margin-top: -3.6px;
+    background-color: #38004e;
+    border: 1px solid #ffffff98;
   }
-
-  /*The slider for both the mass and eccentricity variables. */
-  .TwoBodySimulation-massSlider,
-  .TwoBodySimulation-eccentricitySlider {
-    max-width: 400px;
-    margin: 0 auto;
-  }
-  
   
   </style>
   
@@ -214,15 +208,15 @@
     <p id="TwoBodySimulation-notSupportedMessage" class="TwoBodySimulation-alert TwoBodySimulation-isHiddenBlock">Please use a newer browser to see the simulation.</p>
   
   <div class="TwoBodySimulation-container isFullScreenWide isUnselectable">
-      <img src='image-removebg-preview (1).png' alt='Earth' class='TwoBodySimulation-sun'>
-      <img src='Earth 10.png' alt='Earth' class='TwoBodySimulation-earth' >
+      <img src='https://evgenii.com/image/blog/2018-08-17-two-body-problem-simulator/sun.png' alt='Earth' class='TwoBodySimulation-sun'>
+      <img src='https://evgenii.com/image/blog/2018-08-17-two-body-problem-simulator/earth.png' alt='Earth' class='TwoBodySimulation-earth'>
       <img src='https://evgenii.com/image/blog/2018-08-17-two-body-problem-simulator/center_of_mass.png' alt='Earth' class='TwoBodySimulation-centerOfMass'>
   
       <canvas class="TwoBodySimulation-canvas"></canvas>
   
       <div class='TwoBodySimulation-hudContainer'>
         <div class='TwoBodySimulation-hudContainerChild'>
-          <a class='TwoBodySimulation-reload' href='#'><img src='https://cdn0.iconfinder.com/data/icons/basic-ui-elements-round/700/012_restart-512.png' alt='Restart' class='TwoBodySimulation-reloadIcon'></a>
+          <a class='TwoBodySimulation-reload' href='#'><img src='https://evgenii.com/image/blog/2016-09-17-ridiculous-strawberry-picking/reload_icon.png' alt='Restart' class='TwoBodySimulation-reloadIcon'></a>
         </div>
       </div>
   </div>
@@ -256,8 +250,7 @@
         // A function that will be called when user changes the slider position.
         // The function will be passed the slider position: a number between 0 and 1.
         onSliderChange: null,
-        // Store the previous slider value in order to prevent calling onSliderChange function 
-        // with the same argument
+        // Store the previous slider value in order to prevent calling onSliderChange function with the same argument
         previousSliderValue: -42,
         didRequestUpdateOnNextFrame: false
       };
@@ -316,8 +309,7 @@
   
         that.slider.addEventListener("touchmove", function(e) {
           if (typeof e.preventDefault !== 'undefined' && e.preventDefault !== null) {
-            e.preventDefault(); // Prevent screen from sliding on touch devices 
-            // when the element is dragged.
+            e.preventDefault(); // Prevent screen from sliding on touch devices when the element is dragged.
           }
         });
       };
@@ -547,7 +539,7 @@
         state.positions[1].y = a1 * state.u[1];
       }
   
-      // Returns the separation between two objects
+      // Returns the separatation between two objects
       // This is a value from 1 and larger
       function separationBetweenObjects() {
         return initialConditions.position.x / (1 - state.eccentricity);
@@ -603,7 +595,7 @@
         bodyElement.style.top = top;
       }
   
-      // Updates the sizes of the two objects based on the mass ratio (value from 0 to 1)
+      // Updates the sizes of the two object based on the mass ratio (value from 0 to 1)
       // and the scale factor (value from 1 and larger).
       function updateObjectSizes(massRatio, scaleFactor) {
         currentBodySizes[1] = defaultBodySize / scaleFactor;
